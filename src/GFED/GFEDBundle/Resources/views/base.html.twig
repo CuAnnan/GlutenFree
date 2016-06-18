@@ -1,0 +1,39 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<!DOCTYPE html>
+<html>
+	<head>
+		{% block styles %}{% endblock %}
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/GFEDGlobal.css') }}"/>
+		<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+		<title>Gluten Free Eating Directory - {%block title %}Home{% endblock %}</title>
+	</head>
+	<body>
+		<nav id="gfed_nav">
+			<ul>
+				<li><a href="{{ path('gfed_homepage') }}">Home</a></li>
+				<li>Map</li>
+				<li>
+					<a href="{{ path('gfed_restaurant_list') }}">Restaurant List</a>
+				</li>
+				{% if is_granted('ROLE_USER') %}
+				<li>
+					<a href="{{ path('gfed_restaurant_add') }}">Add Restaurant</a>
+				</li>
+				<li>
+					<a href="{{ path('fos_user_security_logout') }}">Logout</a>
+				</li>
+				{% else %}
+				<li>
+					<a href="{{ path('fos_user_security_login') }}">Login</a>
+				</li>
+				<li>
+					<a href="{{ path('fos_user_registration_register') }}">Register</a>
+				</li>
+				{% endif %}
+			</ul>
+		</nav>
+		<h1>The Gluten Free Eating Directory</h1>
+		{% block content %}
+		{% endblock %}
+	</body>
+</html>

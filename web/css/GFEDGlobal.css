@@ -1,0 +1,23 @@
+nav#gfed_nav ul
+{
+	list-style: none;
+	padding:0px;
+}
+
+nav#gfed_nav li
+{
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	display: inline-block;
+	border-right: 1px solid black;
+}
+
+nav#gfed_nav li:last-child
+{
+	border: none;
+}
+
+h1
+{
+	text-align: center;
+}
